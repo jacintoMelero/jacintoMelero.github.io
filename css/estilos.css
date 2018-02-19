@@ -1,0 +1,60 @@
+@charset "utf-8";
+.degradado {
+    background: -webkit-linear-gradient(#ABF6AB, white);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ABF6AB, white);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ABF6AB, white);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ABF6AB, white);
+    /* Standard syntax */
+}
+
+.encabezado {
+    color: red;
+    background: lightgray;
+    text-align: center;
+    text-decoration: underline;
+    font-size: x-large;
+}
+
+.texto1 {
+    font-family: advent-pro, sans-serif;
+    font-size: 20px;
+    color: blue;
+    font-weight: bold;
+}
+
+.texto2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.cajaIzq {
+    width: 45%;
+    height: 300px;
+    float: left;
+}
+
+.cajaDer {
+    width: 45%;
+    height: 300px;
+    float: right;
+}
+
+.cajaBottom {
+    height: 30px;
+    width: 100%;
+    background: lightblue;
+    border-radius: 3%;
+    clear: both;
+    text-align: center;
+}
+
+.cajaBorde {
+    clear: both;
+    border-color: brown;
+    border-style: double;
+    border-bottom-width: medium;
+    margin: 50px;
+}
