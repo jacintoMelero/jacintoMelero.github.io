@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Buenos días a la calculadora de Jacinto Melero Gómez </title>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+  var num, acc = 0, op = "";
+
+  function mas()   { acc = num.value;  op = "+"; }
+  function menos() { acc = num.value;  op = "-"; }
+  function multiplica() {acc = num.value; op = "*";}
+  function divide() { acc = num.value; op = "/"}
+  function cuadrado() {acc = num.value; op = "2";}
+  function inverso() { acc = num.value; op = "i";}
+  function raiz() { acc = num.value; op = "r";}
+  function entero() { acc = num.value; op = "e";}
+  function elevado() { acc = num.value; op = "^"}
+  function calcular() {
+    if (op === "+") {num.value = (+acc + +num.value)}
+    else if (op === "-") {num.value = (+acc - +num.value)}
+    else if (op === "*") {num.value = (+acc * +num.value)}
+    else if (op === "/") {num.value = (+acc / +num.value)}
+    else if (op === "2") {num.value = Math.pow(+acc,2)}
+    else if (op === "i") {num.value = (1 / +acc)}
+    else if (op === "r") {num.value = Math.sqrt(+acc)}    	
+    else if (op === "e") {num.value = (+acc > 0)?Math.floor(+acc): -Math.ceil(+acc)}
+    else if (op === "^") {num.value = Math.pow(+acc,+num.value)}    	
+  }
+
+  function inic ()   {num = document.getElementById("num");}
+  function vaciar () {num.value = "";}  
+</script>
+</head>
+<body onLoad="inic()">
+  <h1>Buenos días a la calculadora de Jacinto Melero Gómez</h1>
+  Número:<p>
+  <input type="text" size="12" id="num" onClick="vaciar()"><p>
+  <button onClick="mas()">+</button>
+  <button onClick="menos()">-</button>
+  <button onClick="calcular()">=</button>  
+  <br>
+  <button onclick="entero()">int</button>
+  <button onclick="multiplica()">*</button>
+  <button onclick="divide()">/</button>  
+  <br>
+  <button onclick="cuadrado()">x<sup>2</sup></button>
+  <button onclick="inverso()">1/x</button>
+  <button onclick="raiz()">x<sup>-2</sup></button>
+  <button onclick="elevado()">x<sup>y</sup></button>
+  </p>
+</body>
+</html>
