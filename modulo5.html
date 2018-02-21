@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Buenos días a la calculadora de Jacinto Melero </title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">1
+var num, acc = 0, op = "";
+function factorial (n) {
+          if (n === 1){return 1;}
+          else{
+            return n * factorial (n - 1);
+          }
+        }
+ $(function() {
+       num = $("#num");
+       num.click(function(){num.val("");});
+       $("#mas").click(function(){acc = num.val();  op = "+";});
+       $("#menos").click(function(){acc = num.val();  op = "-";});
+       $("#multiplica").click(function(){acc = num.val(); op = "*";});
+       $("#divide").click(function(){ acc = num.val(); op = "/"});
+       $("#cuadrado").click(function(){acc = num.val(); op = "2";});
+       $("#inverso").click(function(){ acc = num.val(); op = "i";});
+       $("#raiz").click(function(){ acc = num.val(); op = "r";});
+       $("#entero").click(function(){ acc = num.val(); op = "e";});
+       $("#elevado").click(function(){ acc = num.val(); op = "^"});
+       $("#factorial").click(function(){ acc = num.val(); op = "f"});
+       $("#sumatorio").click(function(){ acc = num.val(); op = "Σ"});
+       $("#producto").click(function(){ acc = num.val(); op = "p"});
+       $("#calcular").click(function(){
+          if (op === "+") {num.val(+acc + +num.val())}
+          else if (op === "-") {num.val(+acc - +num.val())}
+          else if (op === "*") {num.val(+acc * +num.val())}
+          else if (op === "/") {num.val(+acc / +num.val())}
+          else if (op === "2") {num.val(Math.pow(+acc,2))}
+          else if (op === "i") {num.val(1 / +acc)}
+          else if (op === "r") {num.val(Math.sqrt(+acc))}     
+          else if (op === "e") {num.val((+acc > 0)?Math.floor(+acc): -Math.ceil(+acc))}
+          else if (op === "^") {num.val(Math.pow(+acc,+num.val()))}    
+          else if (op === "f") {num.val(factorial(+acc))}
+          else if (op === "Σ") {var lista = acc.split(","), i=0;total=0;
+                      
+                           for (var i = lista.length - 1; i >= 0; i--) {
+                             total = total + +lista[i];
+                           }
+                           num.val(total);
+                          }
+          else if (op === "p") {var lista = acc.split(","), i=0;total=1;
+                      
+                           for (var i = lista.length - 1; i >= 0; i--) {
+                             total = total * +lista[i];
+                           }
+                           num.val(total);
+                          }
+
+  });
+       }
+    ); 
+</script>
+</head>
+<body>
+  <h1>Buenos días a la calculadora de Jacinto Melero</h1>
+  Número:<p>
+  <input type="text" size="12" id="num"><p>
+  <button id="mas">+</button>
+  <button id="menos">-</button>
+  <button id="multiplica">*</button>
+  <button id="divide">/</button>    
+  <button id="calcular">=</button>  
+  <p>
+  <button id="entero">int</button>
+  <button id="factorial">n!</button>
+  <button id="sumatorio">Σx</button>
+  <button id="producto">*x</button>
+  <p>
+  <button id="cuadrado">x<sup>2</sup></button>
+  <button id="inverso">1/x</button>
+  <button id="raiz">x<sup>-2</sup></button>
+  <button id="elevado">x<sup>y</sup></button>
+  <p>
+  
+</body>
+</html>
