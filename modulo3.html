@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Date</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1 id="h1"></h1>
+    <h2 id="h2">La fecha y la hora son:</h2>
+    <div id="fecha"></div>
+    <div id="explicacion">
+      
+    </div>
+    <script type="text/javascript">
+    var fecha = new Date();
+    var msj;
+    var retorno = "<br>";
+
+    if (fecha.getHours() < 7) { msj = "Buenas noches"; } 
+    else if (fecha.getHours() < 12) { msj = "Buenos días"; } 
+    else if (fecha.getHours() < 21) { msj = "Buenas tardes"; } 
+    else { msj = "Buenas noches"; }
+
+    document.getElementById("h1").innerHTML = msj;
+    document.getElementById("fecha").innerHTML = fecha;
+    document.getElementById("h1").innerHTML = "Jacinto Melero Gómez";
+    document.getElementById("explicacion").innerHTML = " <strong>H2 contiene : </strong>" + document.getElementById("h2").innerHTML + retorno +
+       "<strong>H1 está definido como : </strong>" + document.getElementById("h1").outerHTML.replace(/</g,"&lt;",/>/g,"&gt;")  + retorno + 
+       "<strong>Location.href y location son : </strong>" + location.href + " ------ " + location + retorno +
+       "<strong>Ancho x Largo de pantalla = </strong>" + screen.width + "x" + screen.height;
+
+    </script>
+</body>
+
+</html>
