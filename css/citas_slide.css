@@ -95,6 +95,20 @@ nav a:hover {
 .editar:hover > img {
 	background-color: #000000;
 }
+.local {
+	background-color: #323232;
+	padding: 0.2em;
+	text-align: left;
+	height:28px;
+	cursor:pointer;
+}
+.local img {
+	padding: 6px;
+	border-radius:50%;
+}
+.local:hover > img {
+	background-color: #000000;
+}
 .contenido #datos div#botones {
 	border: 1px none #000000;
 	background-color:#ccc;
