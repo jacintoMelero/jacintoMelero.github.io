@@ -9,6 +9,13 @@
 
 <script>
 var t, actual;
+function checkLocal(){
+  if(localStorage.getItem("citas")!=null){
+      galeria=JSON.parse(localStorage.getItem("citas")); 
+      galeria = $.map(galeria, function(el) { return el });
+      console.log(galeria);
+    }
+}
 function select(i){
    actual = i;
 
@@ -26,11 +33,7 @@ function select(i){
 
 function generar_selector(){ // regenera la botonera
   var selector = $("#selector");
-  if(localStorage.getItem("citas")!=null){
-      galeria=JSON.parse(localStorage.getItem("citas")); 
-      galeria = $.map(galeria, function(el) { return el });
-      console.log(galeria);
-    }
+  
   selector.html("");
   
   galeria.forEach(function(elem,i) {
@@ -39,7 +42,7 @@ function generar_selector(){ // regenera la botonera
 }
 
 $(function (){
-  //checkLocal();
+  checkLocal();
   generar_selector();
 
   $("#editar").on("click", function(){
@@ -100,7 +103,7 @@ $(function (){
 </script>
 </head>
 
-<body>
+<body onload="checkLocal()">
 <div class="contenido">
   
   <nav> 
@@ -134,3 +137,4 @@ $(function (){
   </div>
 </body>
 </html>
+
